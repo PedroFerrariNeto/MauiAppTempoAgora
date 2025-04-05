@@ -49,11 +49,11 @@ namespace MauiAppTempoAgora
                 }
 
             }
-            catch 
+            catch
             {
-                {
-                    await DisplayAlert("Ops", "Verique sua conexão com internet", "OK");
-                }
+                
+               await DisplayAlert("Ops", "Verique sua conexão com internet", "OK");
+                
             }
         }
 
