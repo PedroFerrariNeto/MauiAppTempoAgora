@@ -29,27 +29,30 @@ namespace MauiAppTempoAgora
                                          $"Nascer do Sol: {t.sunrise} \n" +
                                          $"Por do Sol: {t.sunset} \n" +
                                          $"Temp Máx: {t.temp_max} \n" +
-                                         $"Temp Min: {t.temp_min} \n";
+                                         $"Temp Min: {t.temp_min} \n" +
+                                         $"Previsão do tempo: {t.description} \n" +
+                                         $"Velocidade do vento: {t.speed} \n" +
+                                         $"Visibiliadade: {t.visibility} \n";
 
 
                         lbl_res.Text = dados_previsao;
                     }
                     else
                     {
-                        lbl_res.Text = "Sem dados de Previsão";
+                        lbl_res.Text = "Nome da Cidade não encontrada, por favor digite novamente";
                     }
 
                 }
                 else
                 {
-                    lbl_res.Text = "Preencha a cidade.";
+                    lbl_res.Text = "Nome da Cidade não encontrada, por favor digite novamente!";
                 }
 
             }
-            catch (Exception ex)
+            catch 
             {
                 {
-                    await DisplayAlert("Ops", ex.Message, "OK");
+                    await DisplayAlert("Ops", "Verique sua conexão com internet", "OK");
                 }
             }
         }
